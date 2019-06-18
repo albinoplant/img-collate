@@ -35,7 +35,7 @@ echo ""
 #it creates dirs
 #NEEDS PHOTOS() FUNCTION it actually could be just one function
 photosInOrder () {
-whereToVar="$HOME}/Documents/Date_Ordered_Images"
+whereToVar="${HOME}/Documents/Date_Ordered_Images"
 echo "Do you want to put your photos in the default folder"
 echo "(${HOME}/Documents/Date_Ordered_Images)?"
 read -p "y/n ? " testIt
@@ -66,7 +66,9 @@ do
 			if [ "$j" = "01" ] || [ "$j" = "03" ] || [ "$j" = "05" ] || [ "$j" = "07" ] || [ "$j" = "08" ] || [ "$j" = "10" ] || [ "$j" = "12" ]; then
 				dateStart="$i-$j-01"
 				dateStop="$i-$j-31"
-			#should do something about 29th of feb
+			elif [ $(( $dateVar % 4 )) -eq 0 ] && [ "$j" = "02" ]; then
+				dateStart="$i-$j-01"
+				dateStop="$i-$j-29"
 			elif [ "$j" = "02" ]; then
 				dateStart="$i-$j-01"
 				dateStop="$i-$j-28"
