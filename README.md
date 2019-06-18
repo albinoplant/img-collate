@@ -1,2 +1,2 @@
 # img-collate
-bash  script that copies wanted files and arranges them into year/month dir structure
+bash  script that copies files in given directory and arranges them into year/month structure in other dir
